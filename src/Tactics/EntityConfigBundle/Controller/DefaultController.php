@@ -3,11 +3,15 @@
 namespace Tactics\EntityConfigBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Tactics\EntityConfigBundle\Entity\Person;
+use Tactics\EntityConfigBundle\EntityConfig\ConfigProvider;
 
 class DefaultController extends Controller
 {
-    public function indexAction($name)
+    public function showAction(Person $person)
     {
-        return $this->render('TacticsEntityConfigBundle:Default:index.html.twig', array('name' => $name));
+        $provider = new ConfigProvider();
+
+        return $this->render('TacticsEntityConfigBundle:Default:show.html.twig', array('c' => $provider->getConfig($person)));
     }
 }
