@@ -1,0 +1,4 @@
+tactics_entity_config:
+    resource: "@TacticsEntityConfigBundle/Resources/config/routing.xml"
+    prefix:   /
+
